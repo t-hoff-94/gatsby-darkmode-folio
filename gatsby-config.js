@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    title: `Tanners Portfolio`,
+    author: `Tanner Hoffman`,
+    description: `A place where I can show the things i've built and write about stuff that I am learning`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `tannerHoffman_`,
     },
   },
   plugins: [
@@ -42,6 +42,7 @@ module.exports = {
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+          `gatsby-plugin-dark-mode`,
         ],
       },
     },
@@ -57,8 +58,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Tanners Portfolio`,
+        short_name: `Tanners Portfolio`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,

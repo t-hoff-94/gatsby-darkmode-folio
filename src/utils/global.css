@@ -1,0 +1,32 @@
+body {
+  --bg: white;
+  --textNormal: #333038;
+  --textTitle: #222;
+  --textSecondary: #211e26;
+  --textLink: #e25204;
+  --hr: hsla(0, 0%, 0%, 0.2);
+
+  background-color: var(--bg);
+  color: var(--textNormal);
+}
+blockquote {
+  color: var(--textNormal);
+  border-left: 0.32813rem solid #666;
+}
+pre {
+  border-radius: 4px;
+}
+
+body.dark {
+  -webkit-font-smoothing: antialiased;
+
+  --bg: #211e26;
+  /* --bg: #222; */
+  --textNormal: rgba(255, 255, 255, 0.88);
+  --textSecondary: #fff;
+  --textTitle: white;
+  --textLink: #eaca9a;
+  /* --textLink: #f2a635; */
+  /* --textLink: #ffa319; */
+  --hr: hsla(0, 0%, 100%, 0.2);
+}

@@ -3,6 +3,8 @@ import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
 
+import LightSwitch from "./lightSwitch"
+
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
@@ -11,24 +13,25 @@ class Layout extends React.Component {
 
     if (location.pathname === rootPath) {
       header = (
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
-          <Link
+        <>
+          <h1
             style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
+              // ...scale(1.5),
+              marginTop: 0,
             }}
-            to={`/`}
           >
-            {title}
-          </Link>
-        </h1>
+            <Link
+              style={{
+                boxShadow: `none`,
+                textDecoration: `none`,
+                color: `var(--textSecondary)`,
+              }}
+              to={`/`}
+            >
+              {title}
+            </Link>
+          </h1>
+        </>
       )
     } else {
       header = (
@@ -42,7 +45,7 @@ class Layout extends React.Component {
             style={{
               boxShadow: `none`,
               textDecoration: `none`,
-              color: `inherit`,
+              color: `var(--textSecondary)`,
             }}
             to={`/`}
           >
@@ -60,7 +63,17 @@ class Layout extends React.Component {
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
-        <header>{header}</header>
+        <header
+          style={{
+            display: `flex`,
+            justifyContent: `space-between`,
+            flexWrap: `wrap`,
+            marginBottom: rhythm(1.5),
+          }}
+        >
+          {header}
+          <LightSwitch />
+        </header>
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
