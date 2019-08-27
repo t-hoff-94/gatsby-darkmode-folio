@@ -6,7 +6,7 @@ class LightSwitch extends React.Component {
     return (
       <ThemeToggler>
         {({ theme, toggleTheme }) => (
-          <label style={{}}>
+          <label>
             <input
               style={{
                 border: `0`,
@@ -24,11 +24,32 @@ class LightSwitch extends React.Component {
             />{" "}
             <div
               style={{
-                width: `50px`,
-                height: `50px`,
-                background: `black`,
+                border: "2px solid var(--textLink)",
+                width: "50px",
+                position: "relative",
+                height: "22px",
+                background: "black",
+                transition: "all 0.5s ease 0s",
+                padding: "1px",
+                display: "flex",
+                justifyContent: `${
+                  theme === "dark" ? "flex-end" : "flex-start"
+                }`,
+                transition: "all .2sec ease",
               }}
-            ></div>
+            >
+              <div
+                className="switch"
+                style={{
+                  position: "absolute",
+                  background: "white",
+                  width: "15px",
+                  display: "flex",
+                  height: "16px",
+                  transition: "all .2sec ease",
+                }}
+              ></div>
+            </div>
           </label>
         )}
       </ThemeToggler>

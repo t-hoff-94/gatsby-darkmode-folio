@@ -5,13 +5,12 @@ body {
   --textSecondary: #211e26;
   --textLink: #e25204;
   --hr: hsla(0, 0%, 0%, 0.2);
-
   background-color: var(--bg);
   color: var(--textNormal);
 }
 blockquote {
   color: var(--textNormal);
-  border-left: 0.32813rem solid #666;
+  border-left: 0.32813rem solid #706c78;
 }
 pre {
   border-radius: 4px;
@@ -29,4 +28,23 @@ body.dark {
   /* --textLink: #f2a635; */
   /* --textLink: #ffa319; */
   --hr: hsla(0, 0%, 100%, 0.2);
+}
+.gatsby-highlight:before {
+  color: black;
+  content: attr(data-language);
+  display: absolute;
+  background: #e4beed88;
+  border-radius: 0 0 5px 5px;
+  position: inline-block;
+  display: inline-block;
+  position: absolute;
+  left: 22px;
+  padding: 5px;
+}
+.gatsby-highlight {
+  /* padding: 3em 1em 1em 1em; */
+  position: relative;
+}
+pre[class*="language-"] {
+  padding: 3em 1em 1em 1em !important;
 }

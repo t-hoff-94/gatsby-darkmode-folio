@@ -55,7 +55,7 @@ const Bio = () => {
       />
       <p>
         Web development and design projects that i've worked on. Also some stuff
-        i've written about things I learn.
+        i've written about the things I learn.
       </p>
     </div>
   )
