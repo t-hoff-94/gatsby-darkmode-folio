@@ -27,6 +27,7 @@ class Layout extends React.Component {
                 color: `var(--textSecondary)`,
               }}
               to={`/`}
+              title="home page"
             >
               {title}
             </Link>
@@ -48,6 +49,7 @@ class Layout extends React.Component {
               color: `var(--textLink)`,
             }}
             to={`/`}
+            title="home page"
           >
             {title}
           </Link>
@@ -78,7 +80,9 @@ class Layout extends React.Component {
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <a href="https://www.gatsbyjs.org" title="Gatsby">
+            Gatsby
+          </a>
         </footer>
       </div>
     )

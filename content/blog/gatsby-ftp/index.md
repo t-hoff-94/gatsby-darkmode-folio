@@ -3,7 +3,7 @@ title: Intro To Gatsby with Jason Lengstorf
 date: "2019-08-26T23:46:37.121Z"
 ---
 
-This is basically an outline of the [Intro to Gatsby Course](https://frontendmasters.com/courses/gatsby/) on Front End Masters with Jason Lengstorf. I really enjoy using Gatsby and this course helped me better understand the fundamentals. Using Gatsby might seem complicated at first especially if you've never used React or GraphQL, but I really liked how Jason explains the basics and gets you started building your first blog site using this technology.
+This is basically an outline of the [Intro to Gatsby Course](https://frontendmasters.com/courses/gatsby/ "Gatsby Course on Front End Masters") on Front End Masters with Jason Lengstorf. I really enjoy using Gatsby and this course helped me better understand the fundamentals. Using Gatsby might seem complicated at first especially if you've never used React or GraphQL, but I really liked how Jason explains the basics and gets you started building your first blog site using this technology.
 
 Overview:
 
@@ -28,7 +28,7 @@ Overview:
 
 Most workflows involve a lot of boilerplate to get started, but Gatsby removes a lot of the boilerplate to make deploying to production as seamless as possible. Gatsby allows you to pull in data from all types of sources, so it makes it really versatile and can be used to build many different types of apps or websites. You can use different tools for what they are best at instead of trying to manipulate a tool into doing something it wasn't necessarily built for (example Wordpress as e-commerce platform).
 
-![Gatsby Graph with plugin logos](./gatsby-graph.jpg)
+![Gatsby Graph with plugin logos](./gatsby-graph1.jpg)
 
 Since most of the config is taken care of automatically, this lets us start writing code as soon as possible. After writing all of your code and your site is ready for deploy to production, Gatsby provides you with a build command that will do a whole bunch of optimization and convert your application into static files that can be pushed to any server. This is a big part of what makes Gatsby sites so fast without you having to do a lot of the tedious work behind the scenes.
 
@@ -53,7 +53,7 @@ Gatsby has what's known as a [Starter Library](https://www.gatsbyjs.org/starters
 gatsby new gatsby-starter-blog https://github.com/gatsbyjs/gatsby-starter-blog
 ```
 
-Using a starter is as simple as the line of code you see above, this one specifically is the [blog starter](https://www.gatsbyjs.org/starters/gatsbyjs/gatsby-starter-blog/s) by Kyle Mathews (founder of Gatsby) which was used to build this site you're on right now. Once you've installed your starter you are able to start typing code and see the changes in your browser instantly. Gatsby provides you with a few scripts in your package.json file including a develop script `npm run develop` that will start up a local dev environment and allow you to access your site at localhost:8000.
+Using a starter is as simple as the line of code you see above, this one specifically is the [blog starter](https://www.gatsbyjs.org/starters/gatsbyjs/gatsby-starter-blog/s) by Kyle Mathews (founder of Gatsby) which was used to build this site you're on right now. Once you've installed your starter you are able to start typing code and see the changes in your browser immediately. Gatsby provides you with a few scripts in your **package.json** file including a develop script `npm run develop` that will start up a local dev environment and allow you to access your site on a local host.
 
 Inside of your Gatsby project, it's likely you will see a folder structure similar to the one below:
 
@@ -79,27 +79,40 @@ The **src** folder is where you will spend the majority of your time, building o
 
 ### Creating a New Page
 
-After you've chosen a starter or even if you decided to build your Gatsby project from scratch, Gatsby will build a folder structure for you that includes everything you need to start creating your website. Depending on which starter you choose, Gatsby will install all of the dependencies that will be needed, and it will create a **package.json** with the list of dependencies, and some starter scripts to get you writing code as soon as possible.
-
-Gatsby makes creating new pages super easy and simple, by automatically turning React components in the `src/pages` folder into pages with unique URLs. For example, a component located at `src/pages/contact.js` would create a page from that filename.
+Gatsby makes creating new pages super easy and simple by automatically turning React components in the `src/pages` folder into pages with unique URLs. For example, a component located at `src/pages/contact.js` would create a page from that filename. I find being able to write React components to build a website or app really enjoyable, and Gatsby makes this workflow even better by helping with a lot of the "not so fun" work so I can start writing code basically instantly with very little configuration.
 
 ```jsx
+import React from "react"
+
 const Page = () => <p>I am a Gatsby page!</p>
+
+export default Page
 ```
 
 ## Gatsby Link
 
-Because we are loading a PWA, we have the ability to use dynamic routing so we don't have to reload the page every time we click a link. Gatsby comes pre packed with [Reach Router](https://reach.tech/router). Gatsby Link is a wrapper around Reach Router that will do a couple extra things like pre-loading, and we can use it in our apps by importing Link from Gatsby.
+Because we are loading a PWA ([progressive web app](https://en.wikipedia.org/wiki/Progressive_web_applications "progressive web app definition")), we have the ability to use dynamic routing which makes it so we don't have to reload the page every time we click an internal link. This feature makes the site feel super fast and seamless compared to the big flash of a blank screen that you normally get when navigating between pages. Gatsby comes pre packed with [Reach Router](https://reach.tech/router "Reach Router Website"). Gatsby provides something called [Gatsby Link](https://www.gatsbyjs.org/docs/gatsby-link/s "Gatsby Website") which is basically a wrapper around Reach Router that will do a couple extra things like pre-loading, and we can use it in our apps by importing Link from Gatsby.
+
+The Gatsby Link API is really simple to use for internal navigation. All you have to do is write the Link component imported from Gatsby and provide it with a **to** prop equal to the path in your application that you want to link to. The Link component also has more advanced capabilities such as programmatic navigation and more that you can read about [here](https://www.gatsbyjs.org/docs/gatsby-link/ "Gatsby Link API documentation").
 
 ```jsx
 import { Link } from "gatsby"
 
 const Page = () => <Link to="/">Home</Link>
+
+export default Page
 ```
 
-### Adding CSS with Emotion
+### 👩‍🎤 Adding CSS with Emotion
 
-Gatsby is really flexible when it comes to styling your apps. You can use regular css files, css modules and any of the CSS in JS solutions. There is no right or wrong answer and it essentially comes down to personal preference. For this article i'll be writing about [Emotion](https://emotion.sh/docs/introduction) which is a CSS in JS Library.
+Gatsby is really flexible when it comes to adding styles to your app. You can use regular globally scoped css files, css modules and any of the CSS in JS solutions which are my personal favorite. There is no right or wrong answer and it essentially comes down to personal preference. For this article i'll be writing about [Emotion](https://emotion.sh/docs/introduction) which is basically a tool that allows you to write css styles with JavaScript.
+
+Cool things about Emotion:
+
+1. SSR out of the box
+2. Theming
+3. Great developer experience
+4. Styles can be scoped to a component which can help avoid specificity issues
 
 ```jsx
 import React from "react"

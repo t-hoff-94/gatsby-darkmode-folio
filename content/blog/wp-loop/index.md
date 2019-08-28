@@ -12,13 +12,13 @@ If you are familiar with WordPress then you are likely aware that basically any 
 
 1. We begin by opening up the loop with an if statement asking if there are any posts. To do this we use a function built in with WordPress called _have_posts()_, which is basically saying "Hey WordPress, are there _ANY_ posts for me to loop through"? If there are in fact posts, the code in between the curly brackets({...}) of the "if" statement will be executed.
 
-```jsx
+```php
 if(have_posts()) {... continue }
 ```
 
 2. After determining if there are any posts to loop through and assuming that there is, the loop must then establish when the loop should end. In more simple terms the loop needs to know how to only cycle through the list of posts one time, and to do this we use a PHP _while loop_ and leveraging _have_posts()_ again we basically say "While we have posts, we want to keep looping through each one until we reach the end of the list."
 
-```jsx
+```php
 if(have_posts()) {
  while(have_posts()) {
    ...inside the loop
@@ -28,7 +28,7 @@ if(have_posts()) {
 
 3. After checking for posts and opening up the loop with the actual PHP _while loop_, we then need to gain access to the content of each post such as the title, content, images, and any custom fields etc. Fortunately WordPress provides another built in function to help us do just that, called _the_post()_. Inside of each **Post** we can then access all of the information and decide how we want to display it to the screen.
 
-```js
+```php
 if(have_posts()) {
   while(have_posts()) {
     the_post();
