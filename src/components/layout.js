@@ -82,7 +82,8 @@ class Layout extends React.Component {
           {` `}
           <a href="https://www.gatsbyjs.org" title="Gatsby">
             Gatsby
-          </a>
+          </a>{" "}
+          By Tanner Hoffman
         </footer>
       </div>
     )

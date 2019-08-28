@@ -1,4 +1,5 @@
 body {
+  --hlCode: #dac5fc66;
   --bg: white;
   --textNormal: #333038;
   --textTitle: #222;
@@ -15,10 +16,18 @@ blockquote {
 pre {
   border-radius: 4px;
 }
-
+p + ul {
+  margin-top: -1rem !important;
+}
+p + ol {
+  margin-top: -1rem !important;
+}
+.hl-purple {
+  background: var(--hlCode);
+}
 body.dark {
   -webkit-font-smoothing: antialiased;
-
+  --hlCode: #dac5fc22;
   --bg: #211e26;
   --textNormal: rgba(255, 255, 255, 0.77);
   --textSecondary: #fff;
