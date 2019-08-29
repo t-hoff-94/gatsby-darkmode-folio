@@ -34,30 +34,33 @@ const Bio = () => {
 
   const { author, social } = data.site.siteMetadata
   return (
-    <div
-      style={{
-        display: `flex`,
-        marginBottom: rhythm(2.5),
-      }}
-    >
-      <Image
-        fixed={data.avatar.childImageSharp.fixed}
-        alt={author}
+    <>
+      <div
         style={{
-          marginRight: rhythm(1 / 2),
-          marginBottom: 0,
-          minWidth: 70,
-          borderRadius: `100%`,
+          display: `flex`,
+          marginBottom: rhythm(2.5),
         }}
-        imgStyle={{
-          borderRadius: `50%`,
-        }}
-      />
-      <p>
-        Web development and design projects that i've worked on. Also some stuff
-        i've written about the things I learn.
-      </p>
-    </div>
+      >
+        <Image
+          fixed={data.avatar.childImageSharp.fixed}
+          alt={author}
+          style={{
+            marginRight: rhythm(1 / 2),
+            marginBottom: 0,
+            minWidth: 70,
+            borderRadius: `100%`,
+          }}
+          imgStyle={{
+            borderRadius: `50%`,
+          }}
+        />
+        <p>
+          Hey i'm Tanner, a web developer/designer located in SLC. Here is where
+          I keep some Web development and design projects that i've worked on.
+          Also some stuff i've written about the things i've learned.
+        </p>
+      </div>
+    </>
   )
 }
 

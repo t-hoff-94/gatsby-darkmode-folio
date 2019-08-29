@@ -26,11 +26,12 @@ class LightSwitch extends React.Component {
               />{" "}
               <div
                 style={{
+                  cursor: "pointer",
                   border: "2px solid var(--textLink)",
                   width: "50px",
                   borderRadius: 3,
                   position: "relative",
-                  height: "22px",
+                  height: "26px",
                   background: "#211e26",
                   transition: "all 0.5s ease 0s",
                   padding: "1px",
@@ -45,14 +46,27 @@ class LightSwitch extends React.Component {
                   className="switch"
                   style={{
                     position: "absolute",
-                    background: "white",
+                    background: `${theme === "dark" ? "#3a3442" : "#fff"}`,
                     borderRadius: 3,
-                    width: "15px",
+                    width: "20px",
                     display: "flex",
-                    height: "16px",
+                    height: "20px",
                     transition: "all .2sec ease",
                   }}
-                ></div>
+                >
+                  <p
+                    style={{
+                      marginBottom: "0",
+                      textAlign: "right",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      transform: "translateX(2px)",
+                    }}
+                  >
+                    {theme === "dark" ? "🌙" : "☀️"}
+                  </p>
+                </div>
               </div>
             </label>
           )

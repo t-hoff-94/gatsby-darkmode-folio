@@ -18,6 +18,7 @@
     "gatsby-plugin-react-helmet": "^3.1.4",
     "gatsby-plugin-sharp": "^2.2.13",
     "gatsby-plugin-typography": "^2.3.3",
+    "gatsby-remark-code-titles": "^1.1.0",
     "gatsby-remark-copy-linked-files": "^2.1.7",
     "gatsby-remark-images": "^3.1.13",
     "gatsby-remark-prismjs": "^3.3.6",
@@ -51,7 +52,7 @@
   },
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",

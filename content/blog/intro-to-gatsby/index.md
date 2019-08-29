@@ -53,7 +53,7 @@ Since most of the config is taken care of automatically, this lets us start writ
 Gatsby has what's known as a [Starter Library](https://www.gatsbyjs.org/starters/?v=2 "Gatsby Starter Library") which has over 200 hundred different "Gatsby Starters" to choose from. I like to think of Starters as kind of similar to a WordPress Theme, they give you a foundation to build upon so you don't have to start from scratch. Each starter comes packed with plugins designed to solve specific problems. There is a starter for some of the more common types of sites you may want to build including a "Gatsby Blog Starter" or a starter that will help you build a custom headless WordPress site, the possibilities are endless and you can even develop your own starters for other people to use which is really cool!
 
 ```
-gatsby new gatsby-starter-blog https://github.com/gatsbyjs/gatsby-starter-blog
+Gatsby new gatsby-starter-blog https://github.com/gatsbyjs/gatsby-starter-blog
 ```
 
 Using a starter is as simple as the line of code you see above, this one specifically is the [blog starter](https://www.gatsbyjs.org/starters/gatsbyjs/gatsby-starter-blog/s "Gatsby Blog Starter") by Kyle Mathews (founder of Gatsby) which was used to build this site you're on right now. Once you've installed your starter you are able to start typing code and see the changes in your browser immediately. Gatsby provides you with a few scripts in your <span class='hl-purple'>package.json</span> file including a develop script <span class='hl-purple'>npm run develop</span> that will start up a local dev environment and allow you to access your site on a local host.
@@ -143,7 +143,7 @@ export default Styled
 
 ### Global Styles with Emotion
 
-In the code below we are using a component from the emotion library called "Global". You will provide the **Global** component with a styles prop which you set equal to curly brackets where inside you can write your global styles in a pair of back-ticks prepended with 'css'. The Global component allows us to write css styles that will be available to our entire application, rather than scoped to individual components which we will talk about more in a minute.
+In the code below we are using a component from the emotion library called <span class='hl-purple'>Global</span>. You will provide the <span class='hl-purple'>Global</span> component with a <span class='hl-purple'>styles</span> prop which you set equal to curly brackets where inside you can write your global styles in a pair of back-ticks prepended with <span class='hl-purple'>css</span>. The <span class='hl-purple'>Global</span> component allows us to write css styles that will be available to our entire application, rather than scoped to individual components which we will talk about more in a minute.
 
 ```jsx
 import React from "react"
@@ -172,7 +172,7 @@ export default Layout
 
 ### Styled Components 💅
 
-One of my favorite things about Emotion is the ability to create "Styled Components", which is not to be confused with another CSS in JS library called "Styled Components" but it was actually inspired by the library. To create a styled component you can call styled with a template literal for string styles or a regular function call for object styles. Styled is capable of styling any component as long as it accepts a className prop.
+One of my favorite things about Emotion is the ability to create "Styled Components", which is not to be confused with another CSS in JS library called "Styled Components" but it was actually inspired by the library. To create a styled component you can call <span class='hl-purple'>styled</span> with a template literal for string styles or a regular function call for object styles. Styled is capable of styling any component as long as it accepts a className prop.
 
 ```jsx
 import styled from "@emotion/styled"
@@ -200,7 +200,7 @@ const Button = styled.button`
 
 #### Styling the Active Link
 
-Gatsby provides you with a prop on your Link components called activeClassName and you can pass it any name you want that can be used in your styles to style the active link depending which page you are on.
+Gatsby provides you with a prop on your Link components called <span class='hl-purple'>activeClassName</span> and you can pass it any name you want that can be used in your styles to style the active link depending which page you are on.
 
 ```jsx
 const NavLink = styled(Link)`
@@ -218,11 +218,11 @@ const NavLink = styled(Link)`
 
 ## Gatsby & GraphQL
 
-One thing I really enjoy about Gatsby is how it pulls data into your website or application by using GraphQL. GraphQL was developed by Facebook around 2012, and it's a data query and manipulation language and a runtime for fulfilling queries with existing data. One really nice thing about using GraphQL with Gatsby is that we get to use the GraphQL Playground, an in-browser IDE that allows us to interact with our data and schema.
+One thing I really enjoy about Gatsby is how it pulls data into your website or application by using GraphQL. GraphQL is a data query and manipulation language and a runtime for fulfilling queries with existing data. One really nice thing about using GraphQL with Gatsby is that we get to use the GraphQL Playground, an in-browser IDE that allows us to interact with our data and schema.
 
-For example it's a common practice in Gatsby to set up your site metadata inside your gatsby.config file. This enables us query data such as our site title, wherever we want on our applications which is really nice.
+For example it's a common practice in Gatsby to set up your site metadata inside your <span class='hl-purple'>gatsby-config.js</span> file. This enables us query data such as our site title, wherever we want on our applications which is really nice.
 
-```javascript
+```js
 module.exports = {
   siteMetadata: {
     title: `Tanner Hoffman`,
@@ -236,7 +236,7 @@ module.exports = {
 }
 ```
 
-Below you can see how we use GraphQL and the Playground to interact with our <span className='hl-pink'>siteMetaData</span> that we set up in our gatsby-config.js file. The Playground is a really nice interface that makes it easy to test our queries that we are going to use in our application.
+Below you can see how we use GraphQL and the Playground to interact with our <span className='hl-pink'>siteMetaData</span> that we set up in our <span class='hl-purple'>gatsby-config.js</span> file. The Playground is a really nice interface that makes it easy to test our queries that we are going to use in our application.
 
 ![GraphQL Playground](./graphi.jpg "GraphQL Playground")
 
@@ -267,15 +267,15 @@ var { site } = useStaticQuery(
 
 ## Gatsby & MDX
 
-If you don't know what [mdx](https://mdxjs.com/ "MDX Website") is, it's basically markdown that works well with React by letting you import components. To render mdx in Gatsby we need to install another plugin named <span class='hl-purple'>gatsby-plugin-mdx</span>. We also need to install <span class='hl-purple'>@mdx-js/mdx</span> and <span class='hl-purple'>@mdx-js/react</span>.
+If you don't know what [mdx](https://mdxjs.com/ "MDX Website") is, it's basically markdown that works well with React by letting you import components. To render MDX in Gatsby we need to install another plugin named <span class='hl-purple'>gatsby-plugin-mdx</span>. We also need to install <span class='hl-purple'>@mdx-js/mdx</span> and <span class='hl-purple'>@mdx-js/react</span>.
 
 ```
 npm install gatsby-plugin-mdx @mdx-js/mdx @mdx-js/react
 ```
 
-After installing those packages from npm all you need to do is tell your Gatsby config file about your gatsby-plugin-mdx plugin and write an .mdx file in your pages folder! We are going to set up an defaultLayouts option so we can tell mdx what layout we want to use for our mdx pages. In this case we are going to use our layout component at <span class='hl-purple'>./src/components/layout.js</span>. Now any mdx files that we load will be rendered through our layout component which is really nice.
+After installing those packages from npm all you need to do is tell your Gatsby config file about your gatsby-plugin-mdx plugin and write an .mdx file in your pages folder! We are going to set up an defaultLayouts option so we can tell MDX what layout we want to use for our MDX pages. In this case we are going to use our layout component at <span class='hl-purple'>./src/components/layout.js</span>. Now any MDX files that we load will be rendered through our layout component which is really nice.
 
-```javascript
+```js
 modules.export = {
   plugins: [
     {
@@ -292,7 +292,7 @@ modules.export = {
 }
 ```
 
-The primary benefit of using mdx is the ability to import React components to add interactive functionality or dynamic data to your markdown posts.
+The primary benefit of using MDX is the ability to import React components to add interactive functionality or dynamic data to your markdown posts.
 
 ```mdx
 import Graph from "../components/graph"
@@ -310,7 +310,7 @@ Gatsby makes it really easy to use plugins and this is what I love about the Gat
 
 ### Building a Blog with MDX
 
-First we need to do some set up so we can start writing our blog <span class='hl-purple'>mdx</span> files. It doesn't necessarily matter where the posts folder is located. Each blog post will have a separate folder inside of the <span class='hl-purple'>posts</span> folder to hold the mdx file and all the images associated with that post.
+First we need to do some set up so we can start writing our blog <span class='hl-purple'>mdx</span> files. It doesn't necessarily matter where the posts folder is located. Each blog post will have a separate folder inside of the <span class='hl-purple'>posts</span> folder to hold the MDX file and all the images associated with that post.
 
 Now we are ready to start writing our <span class='hl-purple'>mdx</span> files. In markdown we have something called front matter which is content that isn't printed to the page, but data that we can use elsewhere like the <span class='hl-purple'>title</span>, <span class='hl-purple'>slug</span>, and <span class='hl-purple'>author</span> of the post.
 
@@ -327,13 +327,13 @@ See those first three lines between the --- things?
 That is what we call frontmatter.
 ```
 
-How do we turn our mdx files into pages on our website? We need to install another plugin called <span class='hl-purple'>gatsby-source-filesystem</span>. After we install the plugin we need to configure it in our gatsby config file. You should learn more about [gatsby-source-filesystem](https://www.gatsbyjs.org/packages/gatsby-source-filesystem/ "gatsby-source-filesystem documentation") on the Gatsby documentation.
+How do we turn our MDX files into pages on our website? We need to install another plugin called <span class='hl-purple'>gatsby-source-filesystem</span>. After we install the plugin we need to configure it in our <span class='hl-purple'>gatsby-config.js</span> file. You should learn more about [gatsby-source-filesystem](https://www.gatsbyjs.org/packages/gatsby-source-filesystem/ "gatsby-source-filesystem documentation") on the Gatsby documentation.
 
 ```
 npm install gatsby-source-filesystem
 ```
 
-```javascript
+```js
 module.exports = {
   siteMetadata: {
     title: `Site title`,
@@ -351,13 +351,13 @@ module.exports = {
 }
 ```
 
-After a very simple set-up our mdx posts our now available in our GraphQL schema which we can check out on the GraphQL Playground which is one of the biggest reasons I enjoy using GraphQL.
+After a very simple set-up our MDX posts our now available in our GraphQL schema that we can check out and play with on the GraphQL Playground which is one of the biggest reasons I enjoy using GraphQL.
 
 ![graphql front matter query](./frontmatter-query.jpg)
 
 #### Rendering a Post
 
-We are going to use a custom hook to render our posts that we call <span class='hl-purple'>usePosts()</span>. The hook will need to import <span class='hl-purple'>useStaticQuery</span> and <span class='hl-purple'>graphql</span> from gatsby so we can query our mdx data to render our blog posts. I suggest you read more about querying data in components with the <span class='hl-purple'>useStaticQuery</span> hook in the [Gatsby Docs](https://www.gatsbyjs.org/docs/use-static-query/ "useStaticQuery documentation").
+We are going to use a custom hook to render our posts that we call <span class='hl-purple'>usePosts()</span>. The hook will need to import <span class='hl-purple'>useStaticQuery</span> and <span class='hl-purple'>graphql</span> from Gatsby so we can query our MDX data to render our blog posts. I suggest you read more about querying data in components with the <span class='hl-purple'>useStaticQuery</span> hook in the [Gatsby Docs](https://www.gatsbyjs.org/docs/use-static-query/ "useStaticQuery documentation").
 
 ```jsx
 import { graphql, useStaticQuery } from "gatsby"
@@ -391,7 +391,7 @@ const usePosts = () => {
 export default usePosts
 ```
 
-Now on our home page we are able to import this hook and use it to retrieve the data we need to display our blog posts on <span class='hl-purple'>index.js</span>. Below you will see a <span class='hl-purple'>PostPreview</span> component that is basically just taking the individual post as a prop so it can return the data in some nicely formatted jsx, into the list of posts on the index page. So essentially we are looping through all of the mdx blog posts we wrote, and creating a list of links that we can use to navigate to each individual post.
+Now on our home page we are able to import this hook and use it to retrieve the data we need to display our blog posts on <span class='hl-purple'>index.js</span>. Below you will see a <span class='hl-purple'>PostPreview</span> component that is basically just taking the individual post as a prop so it can return the data in some nicely formatted jsx, into the list of posts on the index page. So essentially we are looping through all of the MDX blog posts we wrote, and creating a list of links that we can use to navigate to each individual post.
 
 ```jsx
 import Layout from "../components/Layout"
@@ -419,47 +419,161 @@ The ability to create these hooks and being able to re-use their functionality a
 
 ### Generating Post Pages Programmatically
 
-finish this section!
+First we need to create a new file in our root folder named <span class='hl-purple'>gatsby-node.js</span>. Gatsby provides a set of APIs including a set of Node APIs, Browser APIs, and a set of SSR (server side rendering) APIs. This is where you can start to extend Gatsby beyond it's initial configuration. You can read a lot more in depth about the Gatsby APIs and what they are used for on the [Gatsby Docs](https://www.gatsbyjs.org/docs/api-reference/ "Gatsby API reference").
 
-We need to create a new file called gatsby-node.js.
+In this scenario we want to create new pages for our app, so in our <span class='hl-purple'>gatsby-node.js</span> file we are going to do a few things to make this possible. Gatsby gives us utility methods that will help us perform certain actions such as creating new pages from our GraphQL schema.
 
-## ⭐️⚡️🔥 Working with Images
+```js:title=gatsby-node.js
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const result = await graphql(`
+    query {
+      allMdx {
+        nodes {
+          frontmatter {
+            slug
+          }
+        }
+      }
+    }
+  `)
+
+  if (result.errors) {
+    reporter.panic("failed to create posts", result.errors)
+  }
+
+  const posts = result.data.allMdx.nodes
+
+  posts.forEach(post => {
+    actions.createPage({
+      path: post.frontmatter.slug,
+      component: require.resolve("./src/templates/post.js"),
+      context: {
+        slug: post.frontmatter.slug,
+      },
+    })
+  })
+}
+```
+
+Basically what we are doing in the <span class='hl-purple'>gatsby-node.js</span> file is we are querying all of the slugs in the **frontmatter** of our MDX blog posts that we wrote, and inside of create pages we are looping through each slugs and using <span class='hl-purple'>createPage</span> to essentially generate a page for each slugs. If our query results in an error we are catching it with an <span class='hl-purple'>if</span> statement and using <span class='hl-purple'>reporter</span> to send out a <span class='hl-purple'>panic</span> to notify us of the error.
+
+When we call <span class='hl-purple'>createPage</span>, we need to pass three arguments, a <span class='hl-purple'>path</span>, a <span class='hl-purple'>component</span>, and <span class='hl-purple'>context</span>. The path will be the path that is created to navigate to this specific page. The component will be the template that the page will use to be rendered, and the context will be the slug that we send along with the page so we can use it on that page to query the rest of its data.
+
+#### Getting Post Data
+
+In our post template we are exporting a GraphQL query that will accept a variable slug name for each post, and work as a filter to retrieve only the data for that specific post. Since we passed the slug through to context in our <span class='hl-purple'>gatsby-node.js</span> file, we can use the slug in our GraphQL query. We define the variable as a string named slug.
+
+Below is the <span class='hl-purple'>component</span> argument that we passed to <span class='hl-purple'>createPage</span>:
+
+```jsx:title=./src/templates/blog-post.js
+import { graphql, Link } from "gatsby"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+
+export const query = graphql`
+  query($slug: String!) {
+    mdx(frontmatter: { slug: { eq: $slug } }) {
+      frontmatter {
+        title
+        author
+      }
+      body
+    }
+  }
+`
+
+const postTemplate = ({ data: { mdx: post } }) => {
+  return (
+    <Layout>
+      <h1>{post.frontmatter.title}</h1>
+      <p>auth</p>
+      <MDXRenderer>{post.body}</MDXRenderer>
+      <Link to="/">home</Link>
+    </Layout>
+  )
+}
+
+export default postTemplate
+```
+
+##### MDXRenderer Component
+
+Since we wrote our posts in MDX format, we need to install another package from npm that will help us render it to the screen on our post pages. The package is called <span class='hl-purple'>gatsby-plugin-mdx</span>. In the code block above you can see that this is where we imported the <span class='hl-purple'>MDXRenderer</span> component which takes the compiled MDX and renders it. The <span class='hl-purple'>MDXRenderer</span> component can also accept any prop and pass it to your MDX content, similar to a normal React component.
 
 ```
+npm install 'gatsby-plugin-mdx';
+```
+
+We have now programmatically created a page for each of our MDX blog posts, and our data is readily available inside each page ready for us to format and display however we'd like!
+
+## 📸 Working with Images
+
+If you are familiar of working with images when building websites or applications, you probably know that it can turn into a lot of work when following best practices. Gatsby is amazing when it comes to optimizing assets, especially images which is one of the big factors to me enjoying Gatsby so much.
+
+###Optimizing Images with Sharp
+
+Normally when you're building a site you might end up creating a bunch of different sizes for each image so you can serve the right size depending which device your user is on. This can be really time consuming and not very fun, and if it's not done correctly your site could be taking huge impacts on optimization resulting in a slower load time. Gatsby takes care of all of this so we don't have to.
+
+We can optimize our images by installing a few more plugins, <span class='hl-purple'>gatsby-transformer-sharp</span>, <span class='hl-purple'>gatsby-plugin-sharp</span>, <span class='hl-purple'>gatsby-background-image</span>.
+
+```terminal
 npm install gatsby-transformer-sharp gatsby-plugin-sharp gatsby-background-image
 ```
 
-- images in front matter for blog
-- fluid images
-- fluid image sharp/ transformer sharp
-- gatsby image - same as gatsby background image, but for regular images.
+These packages are really powerful in the way they handle image optimization. The transformer basically goes through your site and looks for image nodes and will apply image transformations on them. Once these are installed, we need to tell our <span class='hl-purple'>gatsby-config.js</span> about them. Using <span class='hl-purple'>gatsby-source-filesystem</span> again we will point to another folder named images so now Gatsby will look at this folder and Sharp will run transformations on all of our images.
 
-Because Gatsby recognized that we were pointing to an image in our frontmatter, the transformer knows to make the transformatoins and give us the options of optimization.
-
-- In order to use gatsby images on our mdx posts, we need to install one more plugin that will help us.
-
-  npm install gatsby-remark-images
-
-[Gatsby Remark](https://www.gatsbyjs.org/packages/gatsby-remark-images/ "Gatsby Remark Images documentation")
-
-Next you will have to add some configuration to gatsby-plugin-mdx inside the gatsby-config.js file.
-
-```javascript
-{
-  resolve: 'gatsby-plugin-mdx',
-  options: {
-    defaultLayouts: {
-      default: require.resolve('./src/components/layout.js'),
+```js
+module.exports = {
+  plugins: [
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: "images",
+      },
     },
-    gatsbyRemarkPlugins: [{ resolve: 'gatsby-remark-images' }],
-    plugins: [{ resolve: 'gatsby-remark-images' }],
-  },
-},
+  ],
+}
 ```
 
-Even though we have huge images Gatsby is taking care of a lot of work by optimizing and giving us all types of options for using our images in the most efficient ways. Gatsby image is capable of doing so much cool stuff it's really worth checking out and learning how to use.
+Once Sharp has does it's thing we have all types of options for using our images in the most optimized way possible. Gatsby creates an array of different sizes for each image and it automatically knows when to use the correct size which is a really powerful tool. To display an optimized background image we can use the BackgroundImage component imported from <span class='hl-purple'>gatsby-background-image</span>.
 
-[Using Gatsby Image](https://using-gatsby-image.gatsbyjs.org/traced-svg/ "Gatsby Image API")
+Below is the Hero component we made during the Gatsby course. It's querying a fluid image that was created by Sharp, and it's passing it to the styled BackgroundImage as a prop. It also receives a Tag prop where you can define what type of html tag you'd like to wrap your BackgroundImage component with. And that's really all it takes to product highly optimized background images for your site!
+
+```jsx
+import { Link, graphql, useStaticQuery } from "gatsby"
+import BackgroundImage from "gatsby-background-image"
+
+const ImageBackground = styled(BackgroundImage)`
+  background-size: cover;
+  height: 50vh;
+`
+
+const Hero = () => {
+  const { image } = useStaticQuery(graphql`
+    query {
+      image: file(relativePath: { eq: "cool-image.jpg" }) {
+        sharp: childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `)
+  return (
+    <ImageBackground Tag="section" fluid={image.sharp.fluid}>
+      <h1>Frontend Masters + Gatsby</h1>
+      <p>Hey yall.</p>
+    </ImageBackground>
+  )
+}
+
+export default Hero
+```
+
+There are many more things to learn about working with images in Gatsby, but I kind of just wanted to show you a little preview of how powerful these tools can be for your site. With just a few packages and very little configuration we have very optimized images ready to use in our applications. I highly suggest heading over to the Gatsby Docs and doing some more learning about [working with images in Gatsby](https://www.gatsbyjs.org/docs/working-with-images/ "Working with images in Gatsby Docs")!
 
 ## 3rd Party Data
 

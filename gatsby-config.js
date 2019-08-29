@@ -28,6 +28,12 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: "gatsby-remark-code-titles",
+            options: {
+              className: "your-custom-class-name",
+            },
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
@@ -84,7 +90,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/fav-01.png`,
+        icon: `content/assets/favcon-01.png`,
       },
     },
     `gatsby-plugin-offline`,
