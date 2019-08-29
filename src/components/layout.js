@@ -16,8 +16,9 @@ class Layout extends React.Component {
         <>
           <h1
             style={{
-              fontSize: "2.2rem",
+              // fontSize: "2.2rem",
               marginTop: 0,
+              marginBottom: 5,
             }}
           >
             <Link
@@ -71,6 +72,7 @@ class Layout extends React.Component {
             justifyContent: `space-between`,
             flexWrap: `wrap`,
             marginBottom: rhythm(1.5),
+            alignItems: "center",
           }}
         >
           {header}

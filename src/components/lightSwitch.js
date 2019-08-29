@@ -31,11 +31,12 @@ class LightSwitch extends React.Component {
                   width: "50px",
                   borderRadius: 3,
                   position: "relative",
-                  height: "26px",
-                  background: "#211e26",
+                  height: "28px",
+                  background: `${theme === "dark" ? "#fff" : "#3a3442"}`,
                   transition: "all 0.5s ease 0s",
-                  padding: "1px",
+                  padding: "5px",
                   display: "flex",
+                  alignItems: "center",
                   justifyContent: `${
                     theme === "dark" ? "flex-end" : "flex-start"
                   }`,
@@ -53,20 +54,7 @@ class LightSwitch extends React.Component {
                     height: "20px",
                     transition: "all .2sec ease",
                   }}
-                >
-                  <p
-                    style={{
-                      marginBottom: "0",
-                      textAlign: "right",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      transform: "translateX(2px)",
-                    }}
-                  >
-                    {theme === "dark" ? "🌙" : "☀️"}
-                  </p>
-                </div>
+                ></div>
               </div>
             </label>
           )
