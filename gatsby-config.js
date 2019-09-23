@@ -4,7 +4,6 @@ module.exports = {
     author: `Tanner Hoffman`,
     description: `A place where I can show the things i've built and write about stuff that I am learning`,
     siteUrl: `https://tannerhoffman.space`,
-    image: `/static/my-profile-pic.jpg`,
     social: {
       twitter: `tannerHoffman_`,
       defaultImage: `${__dirname}/content/assets/my-profile-pic.jpg`,

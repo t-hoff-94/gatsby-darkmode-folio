@@ -2,6 +2,7 @@
 title: The WordPress Loop
 date: "2019-05-29"
 description: Learning the basics and fundamentals of the famous "WordPress Loop".
+featuredImage: ./wordpress-loop-twitter-card-01.png
 ---
 
 ## Looping through **Posts**

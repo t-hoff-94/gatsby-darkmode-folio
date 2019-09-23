@@ -11,10 +11,13 @@ class BlogIndex extends React.Component {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
-
+    console.log(this.props, "twitter")
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="Web Development Portfolio and Blog" />
+        <SEO
+          title="Web Development Portfolio and Blog"
+          image={data.defaultTwitter.childImageSharp.fixed.src}
+        />
         <Bio />
         <h2
           style={{
@@ -55,6 +58,15 @@ export const pageQuery = graphql`
             title
             description
           }
+        }
+      }
+    }
+    defaultTwitter: file(
+      absolutePath: { regex: "/default-twitter-card.png/" }
+    ) {
+      childImageSharp {
+        fixed {
+          src
         }
       }
     }

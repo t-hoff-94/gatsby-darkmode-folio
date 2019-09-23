@@ -2,6 +2,7 @@
 title: Intro To Gatsby with Jason Lengstorf
 date: "2019-08-26T23:46:37.121Z"
 description: "This is basically an outline of the Intro to Gatsby Course on Front End Masters with Jason Lengstorf."
+featuredImage: ./intro-gatsby-twitter-card-01.png
 ---
 
 This is basically an outline of the [Intro to Gatsby Course](https://frontendmasters.com/courses/gatsby/ "Gatsby Course on Front End Masters") on Front End Masters with Jason Lengstorf. I really enjoy using Gatsby and this course helped me better understand the fundamentals. Using Gatsby might seem complicated at first especially if you've never used React or GraphQL, but I really liked how Jason explains the basics and gets you started building your first blog site using this technology.
